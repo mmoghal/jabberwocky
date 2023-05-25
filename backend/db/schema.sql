@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS jabberwocky_db;
+
+-- CREATE DATABASE
+CREATE DATABASE jabberwocky_db;
+
