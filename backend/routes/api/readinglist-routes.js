@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const readingListController = require('../controllers/readingListController');
+const readinglistController = require('../../controllers/readinglistController');
 
 // Routes for /api/readinglists
 
