@@ -5,18 +5,18 @@ const bookController = require('../../controllers/bookController');
 // Routes for /api/books
 
 // GET route for all books
-router.get('/', bookController.getAllBooks);
+router.get('/', async (req, res) => bookController.getAllBooks(req, res));
 
 // GET route for a single book by its 'id'
-router.get('/:id', bookController.getBookById);
+router.get('/:id', async (req, res) => bookController.getBookById(req, res));
 
 // POST route for a new book
-router.post('/', bookController.createBook);
+router.post('/', async (req, res) => bookController.createBook(req, res));
 
 // PUT route to update a book by its 'id'
-router.put('/:id', bookController.updateBook);
+router.put('/:id', async (req, res) => bookController.updateBook(req, res));
 
 // DELETE route to delete a book by its 'id'
-router.delete('/:id', bookController.deleteBook);
+router.delete('/:id', async (req, res) => bookController.deleteBook(req, res));
 
 module.exports = router;
