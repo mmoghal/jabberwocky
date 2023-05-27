@@ -28,7 +28,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './frontend/public')));
 
 // Set up Handlebars.js
-const hbs = exphbs.create();
+const viewsPath = path.join(__dirname, './frontend/views');
+app.set('views', viewsPath);
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  layoutsDir: viewsPath + '/layouts'
+});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
