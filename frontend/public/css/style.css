@@ -1,0 +1,100 @@
+/*Colors used throughout app*/
+:root{
+    --primary: #b29090;
+    --secondary: #d9d9d9;
+    --third: #ce8282;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+body{
+    margin: 0px;
+}
+
+#welcomeBody{
+    background-image: url("../images/old-library.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+#welcomeHeader{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--primary);
+}
+
+#siteTitle{
+    font-size: 80px;
+    margin: auto;
+    margin-left: 0px;
+    font-family: 'Abril Fatface', cursive , sans-serif;
+}
+
+#inputField{
+    display: inline-grid;
+    padding-right: 200px;
+}
+
+#userNameInput{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#passwordInput{
+    margin-bottom: 5px;
+}
+
+#forgotLogin{
+    color: white;
+    text-decoration: underline;
+}
+
+#forgotLogin:hover{
+    color: var(--black);
+}
+
+#loginButton{
+    margin-left: 72px;
+}
+
+#loginForm{
+    display: flex;
+}
+
+#signUpLoginButtons{
+    margin-top: 10px;
+}
+
+#modalContents{
+    background: var(--secondary);
+    position: absolute;
+    top: 170px;
+    left: 970px;
+}
+
+#newUserNameInput,
+#newEmailInput,
+#newPasswordInput{
+    margin-bottom: 5px;
+    border: 2px solid;
+}
+ 
+@media screen and (max-width: 900px) {
+    #loginForm{
+        display: block;
+    }
+
+    #welcomeHeader{
+        display: block;
+        text-align: center;
+    }
+
+    #inputField{
+        padding-right: 0px;
+    }
+
+    #signUpLoginButtons{
+        margin-bottom: 10px;
+    }
+}
