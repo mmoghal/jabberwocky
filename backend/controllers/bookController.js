@@ -1,10 +1,11 @@
-const { Book } = require('../models');
+const { BookReview } = require('../models');
 
 const bookController = {
     getAllBooks: async (req, res) => {
         try {
-            const books = await Book.findAll();
-            res.status(200).json(books);
+            const books = await BookReview.findAll();
+            const serializedBooks = books.map(book => book.get({plain:true}));
+            res.status(200).json(books).render('profile', serializedBooks);
         } catch (err) {
             res.status(500).json(err);
         }
@@ -12,7 +13,7 @@ const bookController = {
 
     getBookById: async (req, res) => {
         try {
-            const book = await Book.findByPk(req.params.id);
+            const book = await BookReview.findByPk(req.params.id);
             if (!book) {
                 res.status(404).json({ message: 'No book found with this id!' });
                 return;
@@ -25,7 +26,7 @@ const bookController = {
 
     createBook: async (req, res) => {
         try {
-            const newBook = await Book.create(req.body);
+            const newBook = await BookReview.create(req.body);
             res.status(200).json(newBook);
         } catch (err) {
             res.status(400).json(err);
@@ -51,7 +52,7 @@ const bookController = {
 
     deleteBook: async (req, res) => {
         try {
-            const bookToDelete = await Book.destroy({
+            const bookToDelete = await BookReview.destroy({
                 where: {
                     id: req.params.id,
                 },

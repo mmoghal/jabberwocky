@@ -1,1 +1,67 @@
-<script src="/js/profilePage.js"></script>
+<!-- Sidebar -->
+<div id="side-bar" class="col-2 p-4 pt-5">
+    <h3 id="title"><a id="title" href="#">Jabberwocky</a></h3>
+    <br>
+    <div class="text-center">
+        <a href="#" id="username" class="">{{ userSerialized.username }}</a>
+
+        
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
+                {{#each serialized as |book|}}
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a class="menu-items-small" href="#">{{book.title}}</a>
+                    </li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>
+                <a href="https://github.com/mmoghal/jabberwocky" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Discover</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a class="menu-items-small" href="https://www.gnooks.com/" target="_blank">Gnook</a>
+                    </li>
+                    <li>
+                        <a class="menu-items-small" href="https://www.goodreads.com/" target="_blank">Goodreads</a>
+                    </li>
+                    <li>
+                        <a class="menu-items-small" href="https://www.litsy.com/web/home" target="_blank">Litsy</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div> 
+</div>
+
+
+<!-- Main Content -->
+<div id="content" class="col-10">
+    <!-- Top Navbar -->
+    <div id="orange-bar" class="col-12">
+        <div class="top-navbar mb-4">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <div class="menu">
+                <a class="nav-link me-3" href="http://localhost:3001/">Home</a>
+                <a class="nav-link me-3" href="http://localhost:3001/profile">Profile</a>
+                <a class="nav-link me-3" href="#">Reviews</a>
+                <a class="nav-link me-3" href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+    
+    {{#each serialized as |book|}}
+    <div id="content-paragraph" class="col">
+        <h2 class="mb-4">{{book.title}}</h2>
+        <p>{{book.review}}</p>
+    </div>
+    {{/each}}
+</div>

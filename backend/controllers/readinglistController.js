@@ -1,12 +1,13 @@
-const { ReadingList, Book, User } = require('../models');
+const { ReadingList, BookReview, User } = require('../models');
 
+// readinglists/
 const readinglistController = {
     getAllReadingLists: async (req, res) => {
         try {
             const readingLists = await ReadingList.findAll({
                 include: [
                     {
-                        model: Book,
+                        model: BookReview,
                         attributes: ['id', 'title', 'author'],
                     },
                     {
@@ -17,16 +18,19 @@ const readinglistController = {
             });
             res.status(200).json(readingLists);
         } catch (err) {
+            console.error(err);
             res.status(500).json(err);
         }
     },
 
+
+    // readinglists/:id
     getReadingListById: async (req, res) => {
         try {
             const readingList = await ReadingList.findByPk(req.params.id, {
                 include: [
                     {
-                        model: Book,
+                        model: BookReview,
                         attributes: ['id', 'title', 'author'],
                     },
                     {
@@ -38,13 +42,14 @@ const readinglistController = {
             if (!readingList) {
                 res.status(404).json({ message: 'No reading list found with this id!' });
                 return;
-            }
+            }          
             res.status(200).json(readingList);
         } catch (err) {
             res.status(500).json(err);
         }
     },
 
+   
     createReadingList: async (req, res) => {
         try {
             const newReadingList = await ReadingList.create(req.body);
