@@ -1,4 +1,4 @@
-const { User, BookReview, ReadingList } = require('../models');
+const { User, Book, ReadingList } = require('../models');
 
 const userController = {
     getAllUsers: async (req, res) => {
@@ -7,7 +7,7 @@ const userController = {
                 attributes: { exclude: ['password'] }, // Exclude password from the response
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'rating', 'review'],
                     },
                     {
@@ -28,7 +28,7 @@ const userController = {
                 attributes: { exclude: ['password'] }, // Exclude password from the response
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'rating', 'review'],
                     },
                     {

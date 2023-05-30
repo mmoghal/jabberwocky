@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { ReadingList, BookReview, User } = require('../models');
+const { ReadingList, Book, User } = require('../models');
 
 // /profile/:id
 router.get('/:id', async (req, res) => {
 
     try {
        
-        const books = await BookReview.findAll({
+        const books = await Book.findAll({
             attributes: ['title', 'review', 'rating'],
         });
         console.log(req.params.id);
@@ -18,8 +18,6 @@ router.get('/:id', async (req, res) => {
         const userSerialized = user.get({ plain: true });
         console.log(user);
         res.status(200).render('profilePage', {serialized, userSerialized, layout: 'profile' });
-        // res.status(200).render('profilePage', { serialized: serialized, user: user, layout: 'profile' });
-
         
     } catch (err) {
         console.error(err);
@@ -28,9 +26,5 @@ router.get('/:id', async (req, res) => {
     
 });
 
-// /profile/:id
-// router.get('/:id', async (req, res) => {
-
-// })
 
 module.exports = router;

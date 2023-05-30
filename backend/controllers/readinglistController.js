@@ -1,4 +1,4 @@
-const { ReadingList, BookReview, User } = require('../models');
+const { ReadingList, Book, User } = require('../models');
 
 // readinglists/
 const readinglistController = {
@@ -7,7 +7,7 @@ const readinglistController = {
             const readingLists = await ReadingList.findAll({
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'title', 'author'],
                     },
                     {
@@ -30,7 +30,7 @@ const readinglistController = {
             const readingList = await ReadingList.findByPk(req.params.id, {
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'title', 'author'],
                     },
                     {
