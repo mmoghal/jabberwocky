@@ -6,24 +6,29 @@ const bookData = [
     author: 'Harper Lee',
     genre: 'Southern Gothic, Bildungsroman',
     year_published: 1960,
-    rating: 9.2,
-    review: 'A masterpiece of American literature.'
+    rating: 9,
+    review: 'A masterpiece of American literature.',
+    user_id: 1
+
   },
   {
     title: '1984',
     author: 'George Orwell',
     genre: 'Dystopian, Political Fiction, Social Science Fiction',
     year_published: 1949,
-    rating: 8.5,
-    review: 'A chilling prophecy about the future.'
+    rating: 8,
+    review: 'A chilling prophecy about the future.',
+    user_id: 2
+
   },
   {
     title: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     genre: 'Fantasy',
     year_published: 1954,
-    rating: 9.5,
-    review: 'Epic fantasy adventure.'
+    rating: 9,
+    review: 'Epic fantasy adventure.',
+    user_id: 3
   },
 ];
 

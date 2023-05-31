@@ -15,6 +15,18 @@ BookReview.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    year_published: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     review: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -24,7 +36,7 @@ BookReview.init(
       allowNull: false,
       validate: {
         min: 1,
-        max: 5,
+        max: 10,
       },
     },
     user_id: {
