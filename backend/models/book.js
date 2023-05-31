@@ -24,7 +24,7 @@ BookReview.init(
       allowNull: false,
       validate: {
         min: 1,
-        max: 5,
+        max: 10,
       },
     },
     user_id: {

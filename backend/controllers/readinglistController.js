@@ -1,4 +1,4 @@
-const { ReadingList, Book, User } = require('../models');
+const { ReadingList, User, BookReview } = require('../models');
 
 const readinglistController = {
     getAllReadingLists: async (req, res) => {
@@ -6,8 +6,8 @@ const readinglistController = {
             const readingLists = await ReadingList.findAll({
                 include: [
                     {
-                        model: Book,
-                        attributes: ['id', 'title', 'author'],
+                        model: BookReview,
+                        attributes: ['id', 'title'],
                     },
                     {
                         model: User,
@@ -26,8 +26,8 @@ const readinglistController = {
             const readingList = await ReadingList.findByPk(req.params.id, {
                 include: [
                     {
-                        model: Book,
-                        attributes: ['id', 'title', 'author'],
+                        model: BookReview,
+                        attributes: ['id', 'title'],
                     },
                     {
                         model: User,
