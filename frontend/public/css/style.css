@@ -22,7 +22,7 @@ body{
     display: inline-flex;
     width: 100%;
     justify-content: space-between;
-    background: var(--primary);
+    background: linear-gradient(to left, #ce8282, #1d1919);
 }
 
 #siteTitle{
@@ -30,6 +30,7 @@ body{
     margin: auto;
     margin-left: 0px;
     font-family: 'Cinzel', serif , sans-serif;
+    color: var(--white);
 }
 
 #inputField{
@@ -237,6 +238,7 @@ div.menu > a {
 #homePageBg{
     background-image: url(../images/5148.jpg);
     background-size: contain;
+    background-blend-mode: luminosity;
 }
 
 #homePageBody{
@@ -248,6 +250,11 @@ div.menu > a {
 #createReviewBtn{
     width: 175px;
     height: 35px;
+    font-weight: bold;
+}
+
+#createReviewBtn:hover{
+    color: var(--third);
 }
 
 #top-bar{
