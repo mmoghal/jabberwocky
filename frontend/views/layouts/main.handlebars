@@ -10,27 +10,29 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <body>
-    <div class="mainContainer">
-    <header class="mainHeaderStyle">
-      <div>
-        <nav class="nav flex-column" id="mainNav">
-          <div>
-        <a class="nav-link active" id="hpHomeBtn" href="#">Home</a>
-        <a class="nav-link" id="hpProfileBtn" href="#">My Profile</a>
-        <button type="button" class="btn btn-outline-light" id="createReviewBtn">Create Review</button>
-          </div>
-        <a class="nav-link" id="hpLogOutBtn" href="/">Log Out</a>
-        </nav>
-      </div>
+  <body id="homePageBg">
+    <header>
+<div id="top-bar" class="col-12">
+        <div class="top-navbar mb-4">
+            <button type="button" class="btn btn-light" id="createReviewBtn">Create Review</button>
+            <div class="menu">
+                <a class="nav-link me-3" href="/home">Home</a>
+                <a class="nav-link me-3" href="/profile">Profile</a>
+                <a class="nav-link me-3" href="#">Reviews</a>
+                <a class="nav-link me-3" href="/">Log Out</a>
+            </div>
+        </div>
+    </div>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container container-fluid" id="homePageBody">
       {{{body}}}
     </main>
-    </div>
     <footer>
     <script src="/js/main.js"></script>
     <script

@@ -88,19 +88,6 @@ body{
     border-right: 3px solid var(--black);
 }
 
-#hpHomeBtn,
-#hpProfileBtn,
-#hpLogOutBtn{
-    color: var(--white);
-    font-size: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-#hpLogOutBtn{
-    padding-top: 20px;
-}
-
 .mainContainer{
     display: inline-flex;
     width: 100%;
@@ -111,7 +98,7 @@ body{
 
 #homePageContainer{
     background: var(--primaryTransparent);
-    height: 100%;
+    min-height: 100%;
 }
 
 #mainNav{
@@ -120,21 +107,19 @@ body{
     justify-content: space-between;
 }
 
-#createReviewBtn{
-    width: 100%;
-}
-
 #homeReviewH1{
     text-align: center;
     font-size: 50px;
     color: var(--white);
-    background: var(--black);
+    background: linear-gradient(to left, #ce8282, #1d1919);
+    font-family: 'Cinzel', serif , sans-serif;
 }
 
 .review{
     background: var(--third);
     color: var(--white);
     font-size: 20px;
+    font-family: 'Cinzel', serif , sans-serif;
     border: solid 5px var(--black);
     border-radius: 24px;
     margin-top: 24px;
@@ -156,6 +141,118 @@ body{
 
 .hpGenreYear{
     text-align: end;
+}
+
+.menu-button-container {
+    margin-left: 10px;
+}
+
+div.top-navbar {
+    display: flex;
+    background: linear-gradient(to left, #ce8282, #1d1919);
+    color: #FFF;
+    height: 50px;
+    width: 100%;
+    padding: 1em;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+}
+
+div.top-navbar a {
+    margin-right: 20px;
+    color: #FFF;
+    transition: color 0.3s ease;
+}
+
+div.top-navbar a:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+div.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+div.menu > a {
+    margin: 0 1rem;
+    overflow: hidden;
+
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+#homePageBg{
+    background-image: url(../images/5148.jpg);
+    background-size: contain;
+}
+
+#homePageBody{
+    height: calc(100% - 98px);
+    margin-top: 98px;
+
+}
+
+#createReviewBtn{
+    width: 175px;
+    height: 35px;
+}
+
+#top-bar{
+    position: fixed;
+    top: 0;
 }
 
  
