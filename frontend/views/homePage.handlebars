@@ -1,1 +1,14 @@
+<div id="homePageContainer">
+    <h1 id="homeReviewH1">Jabberwocky Book Reviews</h1>
+    {{#each reviews as |review|}}
+    <div class="review">
+       <p class="hpBookInfo">{{review.title}} by {{review.author}}</p>
+        <p class="hpUser">Review by: {{review.user_id}}</p>
+       <p class="hpRating">Rating: {{review.rating}}</p>
+       <p class="hpReview">{{review.review}}</p>
+       <p class="hpGenreYear">Genre: {{review.genre}}  Release year: {{review.year_published}}</p> 
+    </div>
+    {{/each}}
+</div>
+
 <script src="/js/homePage.js"></script>
