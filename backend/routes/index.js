@@ -5,6 +5,7 @@ const bookRoutes = require('./api/book-routes');
 const readingListRoutes = require('./api/readinglist-routes');
 const welcomeRoutes = require('./welcomePage');
 const profileRoutes = require('./profilePage');
+const reviewRoutes = require('./reviewPage');
 
 
 router.use('/', welcomeRoutes);
@@ -12,6 +13,7 @@ router.use('/users', userRoutes);
 router.use('/books', bookRoutes);
 router.use('/readinglists', readingListRoutes);
 router.use('/profile', profileRoutes);
+router.use('/createreview', reviewRoutes);
 
 
 router.use((req, res) => {

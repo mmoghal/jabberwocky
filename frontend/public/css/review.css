@@ -1,0 +1,680 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: normal;
+    background: #AA8B8B;
+    color: #000;
+    overflow: hidden;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #AA8B8B;
+}
+
+h2 {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #000;
+    margin-bottom: 1.5rem !important;
+    box-sizing: border-box;
+    display: block;
+    font-size: 2rem;
+    height: 48px;
+    margin-block-end: 24px;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    text-align: left;
+}
+
+/* A.) --SIDEBAR-- */
+
+#title {
+    margin-top: -30px;
+    text-align: center;
+    font-family: Raleway, sans-serif, Arial;
+    text-decoration: none;
+}
+
+div.text-center {
+    padding-top: 6px; /* Lines up sidebar text with the <h2> text element on the main content side */
+}
+
+a#username {
+    color: #ce8282;
+    text-decoration: none;
+}
+
+div.text-center a {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+div#side-bar ul li a:hover {
+    color: #AA8B8B;
+    transition: color 0.3s ease;
+}
+
+
+div#side-bar {
+    display: block;
+    background: #1d1919;
+    color: #fff;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+}
+
+div#side-bar ul li a {
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div#side-bar .menu-items-small {
+    font-size: 14px;
+}
+
+/* B.) --TOP NAVIGATION BAR-- */
+
+.menu-button-container {
+    margin-left: 10px;
+}
+
+div.top-navbar {
+    display: flex;
+    background: linear-gradient(to left, #ce8282, #1d1919);
+    color: #FFF;
+    height: 50px;
+    width: 100%;
+    padding: 1em;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: flex-end;
+}
+
+div.top-navbar a {
+    margin-right: 20px;
+    color: #FFF;
+    transition: color 0.3s ease;
+}
+
+div.top-navbar a:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+div.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+div.menu > a {
+    margin: 0 1rem;
+    overflow: hidden;
+
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+
+/* C.) --MAIN CONTENT-- */
+
+#book-title {
+    background-color: #000;
+    color: #AA8B8B;
+}
+
+#book-review {
+    background-color: #000;
+    color: #AA8B8B;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+.navbar-nav{
+    width: 100%;
+}
+
+@media(min-width:568px){
+    .end{
+        margin-left: auto;
+    }
+}
+
+@media(max-width:768px){
+    #post{
+        width: 100%;
+    }
+}
+#clicked{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    width: 100%;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px; 
+}
+
+#profile{
+    background-color: unset;
+    
+} 
+
+#post{
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+}
+
+#nav-items li a,#profile{
+    text-decoration: none;
+    color: rgb(224, 219, 219);
+    background-color: black;
+}
+
+
+.comments{
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.darker{
+    border: 1px solid #ecb21f;
+    background-color: black;
+    float: right;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.comment{
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: #1d1919;
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+    
+}
+.comment h4,.comment span,.darker h4,.darker span{
+    display: inline;
+}
+
+.comment p,.comment span,.darker p,.darker span{
+    color: rgb(184, 183, 183);
+}
+
+h1,h4{
+    color: white;
+    font-weight: bold;
+}
+label{
+    color: rgb(212, 208, 208);
+}
+
+#align-form{
+    margin-top: 20px;
+}
+.form-group p a{
+    color: white;
+}
+
+#checkbx{
+    background-color: black;
+}
+
+#darker img{
+    margin-right: 15px;
+    position: static;
+}
+
+.form-group input,.form-group textarea{
+    background-color: black;
+    border: 1px solid #AA8B8B;
+    border-radius: 12px;
+}
+
+form{
+    border: 1px solid #1d1919;
+    background-color: #1d1919;
+    border-radius: 5px;
+    padding: 20px;
+ }
+
+.row {
+    height: 100vh;
+}
+
+#content-paragraph {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+
+  div.comment-container {
+    margin-left: 10rem;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+
+
+div.content-paragraph {
+    /* This holds all review items inside */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+    /* align-items: center; */
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+	border: 0;
+	outline: 0;
+    /* width: 50vw;
+    height: 50vh; */
+    
+}
+
+h2.review-header {
+    /* display: flex; */
+    color: #000;
+    /* height: 50px;
+    width: 40%; */
+    /* padding: 1em; */
+    /* align-items: center; */
+    border: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* justify-content: center; */
+}
+
+div.review {
+        width: 360px;
+		background: transparent;
+		color: #000;
+		font: inherit;
+		
+		padding: 22px 18px;
+}
+
+.review-submit-button {
+
+
+    /* New */
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #222;
+    border-color: #AA8B8B #ba9595 #ce8282;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+    transition: all 200ms ease-in;
+
+	/* display: inline-block;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+	cursor: pointer;
+    background: #222;
+	color: #FFF;
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+	border-radius: 2px;
+	padding: 12px 36px; */
+}
+
+.review-submit-button:hover {
+    background: darken(#000, 4%);
+    color: #ce8282;
+}
+
+.col-12, .col-10 {
+
+    padding: 0 0 0 0;
+}
+
+/* 5 Star System */
+
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .fa-star.checked,
+  input[type="checkbox"] + label.fa-star {
+    color: #000;
+    font-size: 30px;
+  }
+  
+  input[type="checkbox"]:checked ~ label.fa-star {
+    color: #ff7650
+    /* Gold - #FFC107; */
+  }
+  
+  input[type="checkbox"]:not(:checked) ~ label.fa-star.checked {
+    color: #282828;
+  }
+  
+  
+
+.content {
+    text-align: center;
+  }
+  .content h1 {
+    font-family: 'Sansita', sans-serif;
+    letter-spacing: 1px;
+    font-size: 50px;
+    color: #282828;
+    margin-bottom: 10px;
+  }
+  .content  i {
+    color: #FFC107;
+  }
+  .content span {
+    position: relative;
+    display: inline-block;
+  }
+  .content  span:before, .content  span:after {
+    position: absolute;
+    content: "";
+    background-color: #282828;
+    width: 40px;
+    height: 2px;
+    top: 40%;
+  }
+  .content  span:before {
+    left: -45px;
+  }
+  .content  span:after {
+    right: -45px;
+  }
+  .content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .wrapper {
+    position: relative;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    margin: 50px auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .wrapper input {
+    border: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+  }
+  
+  .wrapper label {
+    position: relative;
+    float: right;
+    color: #C8C8C8;
+  }
+  
+  .wrapper label:before {
+    margin: 5px;
+    content: "\f005";
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size: 1.5em;
+    color: #ccc;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .wrapper input:checked ~ label:before {
+    color: #FFC107;
+  }
+  
+  .wrapper label:hover ~ label:before {
+    color: #ffdb70;
+  }
+  
+  .wrapper label:hover:before {
+    color: #FFC107;
+  }
+
+
+/* D.) --MOBILE SCREENCHANGE-- */
+
+@media (max-width: 972.99px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 1.) --Sidebar-- */
+
+    div#side-bar {
+        /* Removes Side Bar When Screen Becomes Smaller */
+        display: none;
+    }
+
+
+    /* 2.) --Top Navigation Bar-- */
+    div.top-navbar {
+        /* Need this here so button gets moved back to the flex-start on screen change */
+        display: flex;
+        background: linear-gradient(to left, #ce8282, #1d1919);
+        color: #FFF;
+        height: 50px;
+        width: 100%;
+        padding: 1em;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        justify-content: flex-start;
+    }
+
+    div.top-navbar a:hover {
+        color: #ce8282;
+    }
+
+    div.menu {
+        display: flex;
+        flex-direction: column; /* Makes the hamburger menu options display vertically when the screen
+         becomes smaller */
+        z-index: 1;
+        margin: 50px 0 0 0;
+        padding: 0;
+    }
+
+    div.menu > a {
+        margin: 0.5em 0;
+        padding: 0.5em;
+    }
+
+    div.row.switch {
+        /* Makes List Elements Horizontal When Screen Becomes Smaller */
+        display: flex;
+        height: 100px;
+        background-color: #1d1919;
+
+    }
+
+    div.row.switch a {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    div.row.switch ul.list-unstyled.components {
+        display: flex;
+        align-items: center;
+
+    }
+
+    div.switch {
+        display: block;
+    }
+
+    .menu-button-container {
+        display: flex; /* Shows Hamburger Menu */
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu-toggle ~ .menu a {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu a {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > a {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+    .menu > a:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+
+    /* 3.) --Main Content-- */
+
+    .col-10 {
+        /* Makes The Main Column Have Screen Priority When Screen Becomes Smaller */
+        width: 100%;
+    }
+
+    #content-paragraph, h2 {
+        text-align: center;
+    }
+
+    .form-container {
+        width: 100vw;
+
+      }
+
+
+}
