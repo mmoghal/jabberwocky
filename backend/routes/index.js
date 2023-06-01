@@ -9,7 +9,7 @@ const homeRoutes = require('./homePage');
 
 router.use('/', welcomeRoutes);
 router.use('/home', requiresAuth(), homeRoutes);
-router.use('/users', requiresAuth(), userRoutes);
+router.use('/users', userRoutes);
 router.use('/books', requiresAuth(), bookRoutes);
 router.use('/readinglists', requiresAuth(), readingListRoutes);
 

@@ -45,6 +45,27 @@ const loginFormHandler = async (event) => {
     signUpModal.style.display = 'none';
   };
 
+  const submitSignUp = async (event) => {
+    event.preventDefault();
+    const username = document.querySelector("#newUserNameInput").value.trim();
+    const password = document.querySelector("#newPasswordInput").value.trim();
+    if (username && password) {
+      const response = await fetch("/users/", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+   /*redirects user to home page on succesful login or throws up an alert that they failed to log in*/
+      if (response.ok) {
+        document.location.replace("/");
+      } else {
+        alert("Failed to log in");
+      }
+    }
+  };
+  document.getElementById('createAccountButton').addEventListener('click', submitSignUp);
+
+
   const isInModal = (element) => {
     var parent = element.parentElement;
     if(parent !== null){
