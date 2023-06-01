@@ -18,22 +18,7 @@
   <script src="https://cdn.auth0.com/js/lock/12.0.2/lock.min.js"></script>
 
 <!-- Added a script block to handle Auth0 login -->
-<script>
-  // Initialized Auth0 Lock
-  const lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
-    auth: {
-      responseType: 'token id_token',
-      redirectUrl: 'http://localhost:3001/login/callback', // Your login callback URL
-      logoutUrl: 'http://localhost:3001/logout' // Your logout URL
-    },
-  });
 
-  // Event listener for the login button
-  document.getElementById('loginButton').addEventListener('click', (event) => {
-    event.preventDefault();
-    lock.show();
-  });
-</script>
 
 
   </head>
@@ -85,21 +70,22 @@
     crossorigin="anonymous"
   ></script>
   <!-- Added a script block to handle Auth0 login -->
-   <script>
-    // Initialized Auth0 Lock
-    const lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
-      auth: {
-        responseType: 'token id_token',
-      },
-    });
+  <script>
+  // Initialized Auth0 Lock
+  const lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
+    auth: {
+      responseType: 'token id_token',
+      redirectUrl: 'http://localhost:3001/login/callback', // Your login callback URL
+      logoutUrl: 'http://localhost:3001/logout' // Your logout URL
+    },
+  });
 
-    // Event listener for the login button
-    document.getElementById('loginButton').addEventListener('click', (event) => {
-      event.preventDefault();
-      lock.show();
-    });
-
-  </script>   
+  // Event listener for the login button
+  document.getElementById('loginButton').addEventListener('click', (event) => {
+    event.preventDefault();
+    lock.show();
+  });
+</script>
 
     </footer>
   </body>
