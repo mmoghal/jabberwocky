@@ -6,6 +6,9 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
 
+// Import Auth0 middleware
+const authMiddleware = require('./auth0-config');
+
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -36,6 +39,9 @@ const hbs = exphbs.create({
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+// Use Auth0 middleware
+app.use(authMiddleware);
 
 // Use routes
 app.use(routes);

@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const bookController = require('../../controllers/bookController');
 
+// Import Auth0 middleware
+const { requiresAuth } = require('express-openid-connect');
+
 // Routes for /api/books
 
 // GET route for all books

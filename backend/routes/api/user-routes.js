@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../../controllers/userController');
 
+// Import Auth0 middleware
+const { requiresAuth } = require('express-openid-connect');
+
 // Routes for /api/users
 
 // GET route for all users
