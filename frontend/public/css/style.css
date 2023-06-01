@@ -70,9 +70,6 @@ body{
 
 #modalContents{
     background: var(--secondary);
-    position: absolute;
-    top: 170px;
-    left: 970px;
 }
 
 #newUserNameInput,
