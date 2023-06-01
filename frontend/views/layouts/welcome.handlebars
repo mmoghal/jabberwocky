@@ -15,11 +15,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <!-- Added Auth0 Lock library CDN link -->
-  <script src="https://cdn.auth0.com/js/lock/12.0.2/lock.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0-lock/12.0.2/lock.min.js"></script>
 
 <!-- Added a script block to handle Auth0 login -->
+<script>
+  // Initialized Auth0 Lock
+  var lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
+    auth: {
+      responseType: 'token id_token',
+      redirectUrl: 'http://localhost:3001/login/callback', // Our login callback URL
+      logoutUrl: 'http://localhost:3001/logout' // Our logout URL
+    },
+  });
 
-
+  // Event listener for the login button
+  document.getElementById('loginButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    lock.show();
+  });
+</script>
 
   </head>
 
@@ -69,23 +83,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"
   ></script>
-  <!-- Added a script block to handle Auth0 login -->
-  <script>
-  // Initialized Auth0 Lock
-  const lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
-    auth: {
-      responseType: 'token id_token',
-      redirectUrl: 'http://localhost:3001/login/callback', // Your login callback URL
-      logoutUrl: 'http://localhost:3001/logout' // Your logout URL
-    },
-  });
 
-  // Event listener for the login button
-  document.getElementById('loginButton').addEventListener('click', (event) => {
-    event.preventDefault();
-    lock.show();
-  });
-</script>
 
     </footer>
   </body>
