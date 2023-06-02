@@ -10,11 +10,8 @@
             this.$content = $('#content');
             this.$username = $('#username').text();
             this.$reviewSection = $('.content-paragraph');
-            this.$bookTitle = $('#book-title').val();
-            this.$review = $('#book-review').val();
             this.$form = this.$reviewSection.find('form');
             this.$rating = this.$reviewSection.find("input[type='checkbox']");
-            
         },
         bindEvents: function () {
             this.$window.on('resize', this.css.bind(this));
@@ -26,18 +23,21 @@
             if (this.$screenWidth <= 972){this.$myDiv.className = 'col-12';} 
             else {this.$myDiv.className = 'col-10';}
         },
-        createReview: function () {
+        createReview: function (e) {
+            e.preventDefault();
+            const $bookTitle = $('#book-title').val();
+            const $review = $('#book-review').val();
             $.ajax({
-                url: '',
+                url: 'http://localhost:3001/createreview',
                 method: 'POST',
                 data: {
-                    title: this.$bookTitle,
-                    review: this.$review,
+                    title: $bookTitle,
+                    review: $review,
                     rating: this.$rating.filter(':checked').val(),
                 },
                 dataType: 'json',
                 success: function () {document.location.replace('/');},
-                error: function (err) {res.status(500).json(err);},
+                error: function (err) {console.error(err);},
             });
         },
     };

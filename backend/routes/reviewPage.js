@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
             review: req.body.review,
             rating: req.body.rating,
         })
-        res.status(200).json(bookData)
+        res.status(200).json({bookData});
     } 
     
     catch (err) {
