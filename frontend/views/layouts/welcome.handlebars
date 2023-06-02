@@ -14,26 +14,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
-  <!-- Added Auth0 Lock library CDN link -->
-<script src="https://cdn.auth0.com/js/auth0-lock/12.0.2/lock.min.js"></script>
 
-<!-- Added a script block to handle Auth0 login -->
-<script>
-  // Initialized Auth0 Lock
-  var lock = new Auth0Lock('xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA', 'https://dev-3kdcce2iloekw6mb.us.auth0.com', {
-    auth: {
-      responseType: 'token id_token',
-      redirectUrl: 'http://localhost:3001/login/callback', // Our login callback URL
-      logoutUrl: 'http://localhost:3001/logout' // Our logout URL
-    },
-  });
+<!-- Updated Auth0 Lock library CDN link -->
+<script src="https://cdn.auth0.com/js/auth0/9.16.2/auth0.min.js" crossorigin="anonymous"></script>
+      <!-- Wrap your JavaScript code inside DOMContentLoaded event listener -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialize Auth0 client
+          var auth0 = new window.auth0.WebAuth({
+            clientID: 'xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA',
+            domain: 'dev-3kdcce2iloekw6mb.us.auth0.com',
+            responseType: 'token id_token',
+            redirectUri: 'http://localhost:3001/login/callback',
+            logoutUrl: 'http://localhost:3001/logout',
+          });
 
-  // Event listener for the login button
-  document.getElementById('loginButton').addEventListener('click', function(event) {
-    event.preventDefault();
-    lock.show();
-  });
-</script>
+          // Event listener for the login button
+          document.getElementById('loginButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            auth0.authorize();
+          });
+        });
+      </script>
 
   </head>
 
