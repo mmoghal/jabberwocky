@@ -17,6 +17,7 @@ const authConfig = {
   clientSecret: getClientSecret(),
   routes: {
     login: false, // Disable the default login route
+    callback: '/login/callback', // Add the callback route
   },
   authorizationParams: {
     response_type: 'code id_token',
