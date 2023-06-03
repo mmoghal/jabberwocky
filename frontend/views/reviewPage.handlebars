@@ -1,1 +1,106 @@
-<script src="/js/reviewPage.js"></script>
+<!-- Sidebar -->
+<div id="side-bar" class="col-2 p-4 pt-5">
+    <h3 id="title"><a id="title" href="#">Jabberwocky</a></h3>
+    <br>
+    <div class="text-center">
+        <a href="#" id="username" class="">{{ userSerialized.username }}</a>
+
+        
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
+                {{#each serialized as |book|}}
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a class="menu-items-small" href="#">{{book.title}}</a>
+                    </li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>
+                <a href="https://github.com/mmoghal/jabberwocky" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Discover</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a class="menu-items-small" href="https://www.gnooks.com/" target="_blank">Gnook</a>
+                    </li>
+                    <li>
+                        <a class="menu-items-small" href="https://www.goodreads.com/" target="_blank">Goodreads</a>
+                    </li>
+                    <li>
+                        <a class="menu-items-small" href="https://www.litsy.com/web/home" target="_blank">Litsy</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div> 
+</div>
+
+
+<!-- Main Content -->
+<div id="content" class="col-10">
+    <!-- Top Navbar -->
+    <div id="orange-bar" class="col-12">
+        <div class="top-navbar mb-4">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <div class="menu">
+                <a class="nav-link me-3" href="http://localhost:3001/">Home</a>
+                <a class="nav-link me-3" href="http://localhost:3001/{{userSerialized.id}}">Profile</a>
+                <a class="nav-link me-3" href="#">Reviews</a>
+                <a class="nav-link me-3" href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+<div id="content-paragraph" class="content-paragraph">
+
+
+
+            {{!-- Create a Review --}}
+            <div class="form-container col-lg-4 col-md-5 col-sm-4 offset-sm-1 col-12 mt-4">
+                <form id="create-review">
+                    <div class="form-group">
+                        <h4>Leave a book review</h4>
+                        <label for="message">Message</label>
+                        <textarea id="book-review" name="review" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Book Title</label>
+                        <input type="text" name="title" id="book-title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <div class="stars text-center">
+                            <input name="rating" type="checkbox" id="st1" value="5" />
+                            <label for="st1" class="fa fa-star"></label>
+                            <input name="rating" type="checkbox" id="st2" value="4" />
+                            <label for="st2" class="fa fa-star"></label>
+                            <input name="rating" type="checkbox" id="st3" value="3" />
+                            <label for="st3" class="fa fa-star"></label>
+                            <input name="rating" type="checkbox" id="st4" value="2" />
+                            <label for="st4" class="fa fa-star"></label>
+                            <input name="rating" type="checkbox" id="st5" value="1" />
+                            <label for="st5" class="fa fa-star"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="text-secondary">Community Guidelines: Remember to respect other reviewers' opinions. Encourage a healthy and constructive discussion.</p>
+                    </div>
+                    <div class="form-inline d-flex justify-content-center">
+                        
+                        <label>Thank you for sharing!</label>
+                    </div>
+                    <div class="form-group">
+                        <button class="review-submit-button">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+  </div>
+</div>

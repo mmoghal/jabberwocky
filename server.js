@@ -1,4 +1,3 @@
-require('dotenv').config();
 const path = require("path");
 const express = require('express');
 const routes = require('./backend/routes');
@@ -6,10 +5,6 @@ const sequelize = require('./backend/config/connection');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
-
-
-// Import Auth0 middleware
-const authMiddleware = require('./auth0-config');
 
 // Initialize Express app
 const app = express();
@@ -41,9 +36,6 @@ const hbs = exphbs.create({
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-// Use Auth0 middleware
-app.use(authMiddleware);
 
 // Use routes
 app.use(routes);

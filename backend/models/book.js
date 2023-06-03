@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class BookReview extends Model {}
+class Book extends Model {}
 
-BookReview.init(
+Book.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ BookReview.init(
       allowNull: false,
       validate: {
         min: 1,
-        max: 10,
+        max: 5,
       },
     },
     user_id: {
@@ -56,4 +56,4 @@ BookReview.init(
   }
 );
 
-module.exports = BookReview;
+module.exports = Book;

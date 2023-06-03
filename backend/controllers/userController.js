@@ -1,4 +1,4 @@
-const { User, BookReview, ReadingList } = require('../models');
+const { User, Book, ReadingList } = require('../models');
 
 const userController = {
     getAllUsers: async (req, res) => {
@@ -7,7 +7,7 @@ const userController = {
                 attributes: { exclude: ['password'] }, // Exclude password from the response
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'rating', 'review'],
                     },
                     {
@@ -28,7 +28,7 @@ const userController = {
                 attributes: { exclude: ['password'] }, // Exclude password from the response
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'rating', 'review'],
                     },
                     {
@@ -41,7 +41,7 @@ const userController = {
                 res.status(404).json({ message: 'No user found with this id!' });
                 return;
             }
-            res.status(200).json(user);
+            res.status(200).json(user); 
         } catch (err) {
             res.status(500).json(err);
         }
@@ -49,12 +49,9 @@ const userController = {
 
     createUser: async (req, res) => {
         try {
-            console.log(req.body);
             const newUser = await User.create(req.body);
-            console.log(newUser);
             res.status(200).json(newUser);
         } catch (err) {
-            console.log(err);
             res.status(400).json(err);
         }
     },
