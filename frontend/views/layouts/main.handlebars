@@ -14,8 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
-  <!-- Added Auth0 Lock library CDN link -->
-  <script src="https://cdn.auth0.com/js/lock/12.0.2/lock.min.js"></script>
 
 
   </head>
@@ -26,14 +24,9 @@
       <div class="top-navbar mb-4">
         <button type="button" class="btn btn-light" id="createReviewBtn">Create Review</button>
         <div class="menu">
-          {{#if isAuthenticated}}
           <a class="nav-link me-3" href="/home">Home</a>
-          <a class="nav-link me-3" href="/profile">Profile</a>
-          <a class="nav-link me-3" href="/logout">Log Out</a>
-          {{else}}
-          <a class="nav-link me-3" href="/home">Home</a>
-          <a class="nav-link me-3" href="/login">Login</a>
-          {{/if}}
+          <a class="nav-link me-3" href="/profile/1">Profile</a>
+          <a class="nav-link me-3" href="">Log Out</a>
         </div>
       </div>
     </div>
