@@ -14,29 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
-
-<!-- Updated Auth0 Lock library CDN link -->
-<script src="https://cdn.auth0.com/js/auth0/9.16.2/auth0.min.js" crossorigin="anonymous"></script>
-      <!-- Wrap your JavaScript code inside DOMContentLoaded event listener -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          // Initialize Auth0 client
-          var auth0 = new window.auth0.WebAuth({
-            clientID: 'xAmIzMi3vgs4srAQQZ6uuraRExaWfGKA',
-            domain: 'dev-3kdcce2iloekw6mb.us.auth0.com',
-            responseType: 'token id_token',
-            redirectUri: 'http://localhost:3001/login/callback',
-            logoutUrl: 'http://localhost:3001/logout',
-          });
-
-          // Event listener for the login button
-          document.getElementById('loginButton').addEventListener('click', function (event) {
-            event.preventDefault();
-            auth0.authorize();
-          });
-        });
-      </script>
-
   </head>
 
   <body id="welcomeBody">

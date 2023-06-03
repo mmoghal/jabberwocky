@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const readingListController = require('../../controllers/readinglistController');
 
-// Import Auth0 middleware
-const { requiresAuth } = require('express-openid-connect');
-
 // Routes for /api/readinglists
 
 // GET route for all reading lists

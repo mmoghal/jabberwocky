@@ -1,6 +1,5 @@
 const router = require('express').Router();
 
-const { requiresAuth } = require('express-openid-connect');
 const userRoutes = require('./api/user-routes');
 const bookRoutes = require('./api/book-routes');
 const readingListRoutes = require('./api/readinglist-routes');
@@ -10,10 +9,10 @@ const profileRoutes = require('./profilePage');
 const reviewRoutes = require('./reviewPage');
 
 router.use('/', welcomeRoutes);
-router.use('/home', requiresAuth(), homeRoutes);
+router.use('/home', homeRoutes);
 router.use('/users', userRoutes);
-router.use('/books', requiresAuth(), bookRoutes);
-router.use('/readinglists', requiresAuth(), readingListRoutes);
+router.use('/books', bookRoutes);
+router.use('/readinglists', readingListRoutes);
 router.use('/profile', profileRoutes);
 router.use('/createreview', reviewRoutes);
 router.use((req, res) => {
