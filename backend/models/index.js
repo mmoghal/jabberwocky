@@ -1,16 +1,16 @@
 // import models
-const User = require('./user');
-const BookReview = require('./book');
-const ReadingList = require('./readinglist');
+const User = require('./User');
+const Book = require('./Book');
+const ReadingList = require('./ReadingList');
 
-// Users have many BookReviews
-User.hasMany(BookReview, {
+// Users have many Books
+User.hasMany(Book, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-// BookReviews belongs to User
-BookReview.belongsTo(User, {
+// Books belongs to User
+Book.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -19,8 +19,8 @@ ReadingList.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-// ReadingList belongs to BookReview
-ReadingList.belongsTo(BookReview, {
+// ReadingList belongs to Book
+ReadingList.belongsTo(Book, {
   foreignKey: 'book_review_id',
 });
 
@@ -30,14 +30,14 @@ User.hasMany(ReadingList, {
   onDelete: 'CASCADE',
 });
 
-// BookReviews have many ReadingLists
-BookReview.hasMany(ReadingList, {
+// Books have many ReadingLists
+Book.hasMany(ReadingList, {
   foreignKey: 'book_review_id',
   onDelete: 'CASCADE',
 });
 
 module.exports = {
   User,
-  BookReview,
+  Book,
   ReadingList,
 };

@@ -1,12 +1,13 @@
-const { ReadingList, User, BookReview } = require('../models');
+const { ReadingList, Book, User } = require('../models');
 
+// readinglists/
 const readinglistController = {
     getAllReadingLists: async (req, res) => {
         try {
             const readingLists = await ReadingList.findAll({
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'title'],
                     },
                     {
@@ -21,12 +22,14 @@ const readinglistController = {
         }
     },
 
+
+    // readinglists/:id
     getReadingListById: async (req, res) => {
         try {
             const readingList = await ReadingList.findByPk(req.params.id, {
                 include: [
                     {
-                        model: BookReview,
+                        model: Book,
                         attributes: ['id', 'title'],
                     },
                     {
@@ -38,7 +41,7 @@ const readinglistController = {
             if (!readingList) {
                 res.status(404).json({ message: 'No reading list found with this id!' });
                 return;
-            }
+            }          
             res.status(200).json(readingList);
         } catch (err) {
             res.status(500).json(err);
