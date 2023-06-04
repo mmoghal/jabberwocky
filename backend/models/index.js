@@ -11,7 +11,7 @@ User.hasMany(Book, {
 
 // Books belongs to User
 Book.belongsTo(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'id',
 });
 
 // ReadingList belongs to User
