@@ -259,6 +259,35 @@ div.menu > a {
     top: 0;
 }
 
+/* 5 star system*/
+
+.stars {
+    display: flex;
+  }
+  
+  input[type="checkbox"] {
+      display: none;
+    }
+    
+    .star {
+      color: #282828;
+    }
+    
+    .checkedStar {
+        color: #ff7650
+        /* Gold - #FFC107; */
+    }    
+
+.reviewContainer {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reviewContainer p {
+    margin-bottom: 0px;
+}
  
 @media screen and (max-width: 1050px) {
     #loginForm{

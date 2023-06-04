@@ -7,6 +7,10 @@ const { ReadingList, Book, User } = require('../models');
 
 router.get('/', async (req, res) => {
 
+    if (!req.session.logged_in) {
+        res.redirect('/');
+    }
+
     try {
         const books = await Book.findAll({
             attributes: ['title', 'review', 'rating'],
@@ -22,7 +26,14 @@ router.get('/', async (req, res) => {
 
         const serialized = books.map(book => book.get({ plain: true }));
         // const userSerialized = user.get({ plain: true });
-        res.render('reviewPage', {serialized, layout: 'review'});
+        res.render('reviewPage', 
+        {
+            serialized,
+             layout: 'review',
+              logged_in: req.session.logged_in,
+               user_id: req.session.user_id
+            }
+        );
     }
 
     catch (err) {

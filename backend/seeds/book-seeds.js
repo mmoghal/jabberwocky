@@ -6,7 +6,7 @@ const bookData = [
     author: 'Harper Lee',
     genre: 'Southern Gothic, Bildungsroman',
     year_published: 1960,
-    rating: 9.2,
+    rating: 4,
     review: 'A masterpiece of American literature.'
   },
   {
@@ -14,7 +14,7 @@ const bookData = [
     author: 'George Orwell',
     genre: 'Dystopian, Political Fiction, Social Science Fiction',
     year_published: 1949,
-    rating: 8.5,
+    rating: 3,
     review: 'A chilling prophecy about the future.'
   },
   {
@@ -22,7 +22,7 @@ const bookData = [
     author: 'J.R.R. Tolkien',
     genre: 'Fantasy',
     year_published: 1954,
-    rating: 9.5,
+    rating: 5,
     review: 'Epic fantasy adventure.'
   },
 ];

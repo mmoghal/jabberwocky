@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" />
 
 
@@ -25,8 +26,8 @@
         <button type="button" class="btn btn-light" id="createReviewBtn">Create Review</button>
         <div class="menu">
           <a class="nav-link me-3" href="/home">Home</a>
-          <a class="nav-link me-3" href="/profile/1">Profile</a>
-          <a class="nav-link me-3" href="">Log Out</a>
+          <a class="nav-link me-3" href="/profile/{{user_id}}">Profile</a>
+          <a class="nav-link me-3" id="logoutButton">Log Out</a>
         </div>
       </div>
     </div>
@@ -39,6 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
+      <script src="/js/logout.js"></script>
     </footer>
   </body>
 

@@ -32,7 +32,10 @@ const viewsPath = path.join(__dirname, './frontend/views');
 app.set('views', viewsPath);
 const hbs = exphbs.create({
   defaultLayout: 'main',
-  layoutsDir: viewsPath + '/layouts'
+  layoutsDir: viewsPath + '/layouts',
+  helpers: {
+    greaterThanOrEqualTo: (a, b) => {return (a >= b);}
+}
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

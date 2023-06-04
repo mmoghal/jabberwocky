@@ -36,7 +36,7 @@
                     rating: this.$rating.filter(':checked').val(),
                 },
                 dataType: 'json',
-                success: function () {document.location.replace('/');},
+                success: function () {document.location.replace('/home');},
                 error: function (err) {console.error(err);},
             });
         },

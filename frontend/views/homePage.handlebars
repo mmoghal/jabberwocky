@@ -4,7 +4,22 @@
     <div class="review">
        <p class="hpBookInfo">{{review.title}} by {{review.author}}</p>
         <p class="hpUser">Review by: {{review.user_id}}</p>
-       <p class="hpRating">Rating: {{review.rating}}</p>
+        <div class="reviewContainer">
+<p class="hpRating">Rating: 
+         <div class="stars text-center">
+                            <input type="checkbox" name="st1" value="1" disabled {{#if (greaterThanOrEqualTo review.rating 1) }}checked{{/if}} />
+                            <label for="st1" class="fa fa-star {{#if (greaterThanOrEqualTo review.rating 1) }}checkedStar{{/if}} star " ></label>
+                            <input type="checkbox" name="st2" value="2"  disabled {{#if (greaterThanOrEqualTo review.rating 2) }}checked{{/if}} />
+                            <label for="st2" class="fa fa-star {{#if (greaterThanOrEqualTo review.rating 2) }}checkedStar{{/if}} star "></label>
+                            <input type="checkbox" name="st3" value="3"  disabled {{#if (greaterThanOrEqualTo review.rating 3)  }}checked{{/if}} />
+                            <label for="st3" class="fa fa-star {{#if (greaterThanOrEqualTo review.rating 3) }}checkedStar{{/if}} star "></label>
+                            <input type="checkbox" name="st4" value="4"  disabled {{#if (greaterThanOrEqualTo review.rating 4) }}checked{{/if}}/>
+                            <label for="st4" class="fa fa-star {{#if (greaterThanOrEqualTo review.rating 4) }}checkedStar{{/if}} star "></label>
+                            <input type="checkbox" name="st5" value="5" disabled {{#if (greaterThanOrEqualTo review.rating 5) }}checked{{/if}} />
+                            <label for="st5" class="fa fa-star {{#if (greaterThanOrEqualTo review.rating 5) }}checkedStar{{/if}} star "></label>
+                        </div>
+        </p>
+        </div>
        <p class="hpReview">{{review.review}}</p>
        <p class="hpGenreYear">Genre: {{review.genre}}  Release year: {{review.year_published}}</p> 
     </div>
