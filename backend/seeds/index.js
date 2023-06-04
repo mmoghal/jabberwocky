@@ -1,6 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedBooks = require('./book-seeds');
 const seedReadingLists = require('./readinglist-seeds');
+const seedReviews = require('./review-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -13,6 +14,9 @@ const seedAll = async () => {
 
   await seedBooks();
   console.log('\n----- BOOKS SEEDED -----\n');
+
+  await seedReviews();
+  console.log('\n----- REVIEWS SEEDED -----\n');
 
   await seedReadingLists();
   console.log('\n----- READING LISTS SEEDED -----\n');

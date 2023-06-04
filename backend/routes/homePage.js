@@ -1,4 +1,5 @@
 const { Book, User } = require("../models");
+const Review = require("../models/review");
 
 const router = require("express").Router();
 
@@ -9,10 +10,13 @@ router.get("/", async (req, res) => {
     res.redirect('/');
 }
 
-    const reviewData = await Book.findAll({
+    const reviewData = await Review.findAll({
       include: [{
         model: User,
         required: true
+      },{
+        model: Book,
+        required: true,
       }]
     }).catch((err) => {
         res.json(err);

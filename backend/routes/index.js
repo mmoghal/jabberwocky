@@ -7,6 +7,7 @@ const welcomeRoutes = require('./welcomePage');
 const homeRoutes = require('./homePage');
 const profileRoutes = require('./profilePage');
 const reviewRoutes = require('./reviewPage');
+const apiReviewRoutes = require('./api/review-routes');
 
 router.use('/', welcomeRoutes);
 router.use('/home', homeRoutes);
@@ -15,6 +16,7 @@ router.use('/books', bookRoutes);
 router.use('/readinglists', readingListRoutes);
 router.use('/profile', profileRoutes);
 router.use('/createreview', reviewRoutes);
+router.use('/review', apiReviewRoutes);
 router.use((req, res) => {
   res.status(404).send("<h1>Wrong Route!</h1>")
 });

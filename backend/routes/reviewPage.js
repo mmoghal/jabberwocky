@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { ReadingList, Book, User } = require('../models');
+const { ReadingList, Book, User, Review } = require('../models');
 
 // /createreview/:id
 
@@ -12,19 +12,22 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const books = await Book.findAll({
-            attributes: ['title', 'review', 'rating'],
+        const reviews = await Review.findAll({
+            attributes: ['review', 'rating'],
+            include: [
+                {
+                    model: User,
+                    required: true,
+                },
+                {
+                    model: Book,
+                    required: true,
+                }
+            ]
         });
 
-        // Needs authentication
 
-        // const userId = req.query.userId;
-
-        // const user = await User.findByPk(userId, {
-        //     attributes: ['id', 'username'],
-        // })
-
-        const serialized = books.map(book => book.get({ plain: true }));
+        const serialized = reviews.map(review => review.get({ plain: true }));
         // const userSerialized = user.get({ plain: true });
         res.render('reviewPage', 
         {

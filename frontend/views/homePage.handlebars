@@ -2,7 +2,7 @@
     <h1 id="homeReviewH1">Jabberwocky Book Reviews</h1>
     {{#each reviews as |review|}}
     <div class="review">
-       <p class="hpBookInfo">{{review.title}} by {{review.author}}</p>
+       <p class="hpBookInfo">{{review.book.title}} by {{review.book.author}}</p>
         <p class="hpUser">Review by: {{review.user.username}}</p>
         <div class="reviewContainer">
 <p class="hpRating">Rating: 
@@ -21,7 +21,7 @@
         </p>
         </div>
        <p class="hpReview">{{review.review}}</p>
-       <p class="hpGenreYear">Genre: {{review.genre}}  Release year: {{review.year_published}}</p> 
+       <p class="hpGenreYear">Genre: {{review.book.genre}}  Release year: {{review.book.year_published}}</p> 
     </div>
     {{/each}}
 </div>
