@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <div id="side-bar" class="col-2 p-4 pt-5">
-    <h3 id="title"><a id="title" href="#">Jabberwocky</a></h3>
+    <h3 id="title"><a id="title" href="/home">Jabberwocky</a></h3>
     <br>
     <div class="text-center">
         <a href="#" id="username" class="">{{ userSerialized.username }}</a>
@@ -9,13 +9,16 @@
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
-                {{#each serialized as |book|}}
                 <ul class="collapse list-unstyled" id="homeSubmenu">
+                {{#each serialized as |book|}}
                     <li>
                         <a class="menu-items-small" href="#">{{book.title}}</a>
                     </li>
-                </ul>
                 {{/each}}
+                <li>
+                    <a class="menu-items-small" id="addToReadingListBtn">+ Add to Reading List</a>
+                </li>
+                </ul>
             </li>
             <li>
                 <a href="https://github.com/mmoghal/jabberwocky" target="_blank">GitHub</a>
@@ -58,7 +61,7 @@
     </div>
     
     {{#each serialized as |book|}}
-    <div id="content-paragraph" class="col">
+    <div class="col content-paragraph">
         <h2 class="mb-4">{{book.title}}</h2>
         <p>{{book.review}}</p>
     </div>

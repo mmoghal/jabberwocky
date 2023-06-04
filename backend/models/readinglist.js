@@ -18,12 +18,8 @@ ReadingList.init(
         key: 'id',
       },
     },
-    book_review_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'book_review',
-        key: 'id',
-      },
+    book_title: {
+      type: DataTypes.STRING,
     },
   },
   {
