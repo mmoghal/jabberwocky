@@ -9,10 +9,10 @@
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
-                {{#each serialized as |book|}}
+                {{#each readingList as |book|}}
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a class="menu-items-small" href="#">{{book.title}}</a>
+                        <a class="menu-items-small" href="#">{{book.book.title}}</a>
                     </li>
                 </ul>
                 {{/each}}
@@ -57,10 +57,10 @@
         </div>
     </div>
     
-    {{#each serialized as |book|}}
+    {{#each serialized as |review|}}
     <div id="content-paragraph" class="col">
-        <h2 class="mb-4">{{book.title}}</h2>
-        <p>{{book.review}}</p>
+        <h2 class="mb-4">{{review.book.title}}</h2>
+        <p>{{review.review}}</p>
     </div>
     {{/each}}
 </div>

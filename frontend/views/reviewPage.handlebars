@@ -9,10 +9,10 @@
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
-                {{#each serialized as |book|}}
+                {{#each readingList as |book|}}
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a class="menu-items-small" href="#">{{book.title}}</a>
+                        <a class="menu-items-small" href="#">{{book.book.title}}</a>
                     </li>
                 </ul>
                 {{/each}}
@@ -51,7 +51,7 @@
             </label>
             <div class="menu">
                 <a class="nav-link me-3" href="/home">Home</a>
-                <a class="nav-link me-3" href="http://localhost:3001/{{userSerialized.id}}">Profile</a>
+                <a class="nav-link me-3" href="/profile/{{user_id}}">Profile</a>
                 <a class="nav-link me-3" href="#">Reviews</a>
                 <a class="nav-link me-3" id="logoutButton">Log Out</a>
             </div>

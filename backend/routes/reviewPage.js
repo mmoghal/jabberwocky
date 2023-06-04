@@ -25,16 +25,33 @@ router.get('/', async (req, res) => {
                 }
             ]
         });
+        const readingListData = await ReadingList.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: [
+                {
+                    model: User,
+                    required: true,
+                },
+                {
+                    model: Book,
+                    required: true,
+                }
+            ],
+        });
 
 
         const serialized = reviews.map(review => review.get({ plain: true }));
+        const readingList = readingListData.map(item => item.get({ plain: true}));
         // const userSerialized = user.get({ plain: true });
         res.render('reviewPage', 
         {
             serialized,
              layout: 'review',
               logged_in: req.session.logged_in,
-               user_id: req.session.user_id
+               user_id: req.session.user_id,
+               readingList,
             }
         );
     }
