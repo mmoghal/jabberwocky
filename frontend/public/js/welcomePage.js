@@ -5,19 +5,22 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector("#passwordInput").value.trim();
   
     if (userName && password) {
-      const response = await fetch("/api/user/login", {
+      const response = await fetch("/users/login", {
         method: "POST",
         body: JSON.stringify({ userName, password }),
         headers: { "Content-Type": "application/json" },
       });
    /*redirects user to home page on succesful login or throws up an alert that they failed to log in*/
       if (response.ok) {
-        document.location.replace("/");
+        document.location.replace("/home");
       } else {
         alert("Failed to log in");
       }
     }
   };
+  document
+  .getElementById('loginButton')
+  .addEventListener("click", loginFormHandler);
 
   const onClickSignUp = (event) => {
     event.preventDefault();
@@ -57,7 +60,7 @@ const loginFormHandler = async (event) => {
       });
    /*redirects user to home page on succesful login or throws up an alert that they failed to log in*/
       if (response.ok) {
-        document.location.replace("/");
+        document.location.replace("/home");
       } else {
         alert("Failed to log in");
       }

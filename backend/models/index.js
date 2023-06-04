@@ -4,15 +4,10 @@ const Book = require('./Book');
 const ReadingList = require('./ReadingList');
 
 // Users have many Books
-User.hasMany(Book, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+User.hasMany(Book);
 
 // Books belongs to User
-Book.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+Book.belongsTo(User);
 
 // ReadingList belongs to User
 ReadingList.belongsTo(User, {

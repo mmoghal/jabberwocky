@@ -7,6 +7,10 @@ const { ReadingList, Book, User } = require('../models');
 
 router.get('/', async (req, res) => {
 
+    if (!req.session.logged_in) {
+        res.redirect('/');
+    }
+
     try {
         const books = await Book.findAll({
             attributes: ['title', 'review', 'rating'],
@@ -22,7 +26,14 @@ router.get('/', async (req, res) => {
 
         const serialized = books.map(book => book.get({ plain: true }));
         // const userSerialized = user.get({ plain: true });
-        res.render('reviewPage', {serialized, layout: 'review'});
+        res.render('reviewPage', 
+        {
+            serialized,
+             layout: 'review',
+              logged_in: req.session.logged_in,
+               user_id: req.session.user_id
+            }
+        );
     }
 
     catch (err) {
@@ -34,19 +45,26 @@ router.get('/', async (req, res) => {
 
 // POST - Create New Review
 router.post('/', async (req, res) => {
+console.log("?????");
+console.log(req.body);
 
     try {
-    
+        console.log(req);
         // Needs authentication
         const bookData = await Book.create({
             title: req.body.title,
+            author: req.body.author,
+            genre: req.body.genre,
+            year_published: req.body.year_published,
             review: req.body.review,
             rating: req.body.rating,
+            user_id: req.session.user_id,
         })
         res.status(200).json({bookData});
     } 
     
     catch (err) {
+        console.log(err);
       res.status(400).json(err);
     }
         
