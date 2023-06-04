@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
     const reviewData = await Book.findAll({
       include: [{
         model: User,
-        required: true
       }]
     }).catch((err) => {
         res.json(err);
@@ -25,6 +24,7 @@ router.get("/", async (req, res) => {
       { 
         layout: 'main',
         reviews, 
+        jsonReviews: JSON.stringify(reviews),
         logged_in: req.session.logged_in, 
         user_id: req.session.user_id
       }

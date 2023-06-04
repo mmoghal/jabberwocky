@@ -25,15 +25,33 @@
         },
         createReview: function (e) {
             e.preventDefault();
-            const $bookTitle = $('#book-title').val();
-            const $review = $('#book-review').val();
+            const title = $('#book-title').val();
+            const author = $('#book-author').val();
+            const genre = $('#book-genre').val();
+            const year_published = $('#book-release-year').val();
+            const review = $('#book-review').val();
+            let rating = 1;
+            if($('#st1').is(':checked')){
+                rating = 5;
+            } else if($('#st2').is(':checked')){
+                rating = 4;
+            }else if($('#st3').is(':checked')){
+                rating = 3;
+            }else if($('#st4').is(':checked')){
+                rating = 2;
+            } else{
+                rating = 1;
+            }
             $.ajax({
-                url: 'http://localhost:3001/createreview',
+                url: '/createreview',
                 method: 'POST',
                 data: {
-                    title: $bookTitle,
-                    review: $review,
-                    rating: this.$rating.filter(':checked').val(),
+                    title,
+                    author,
+                    genre,
+                    year_published,
+                    review,
+                    rating,
                 },
                 dataType: 'json',
                 success: function () {document.location.replace('/home');},
@@ -43,4 +61,6 @@
     };
 
     review.init();
+
+    $('#submitReviewBtn').click(review.createReview);
 })();

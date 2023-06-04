@@ -105,14 +105,6 @@ body{
     justify-content: space-between;
 }
 
-#homeReviewH1{
-    text-align: center;
-    font-size: 50px;
-    color: var(--white);
-    background: linear-gradient(to left, #ce8282, #1d1919);
-    font-family: 'Cinzel', serif , sans-serif;
-}
-
 .review{
     background: var(--third);
     color: var(--white);
@@ -288,6 +280,30 @@ div.menu > a {
 .reviewContainer p {
     margin-bottom: 0px;
 }
+
+.reviewSectionHeader {
+    text-align: center;
+    font-size: 50px;
+    color: var(--white);
+    background: linear-gradient(to left, #ce8282, #1d1919);
+    font-family: 'Cinzel', serif , sans-serif;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 24px;
+    line-height: 24px;
+}
+
+.reviewSectionHeader h1{
+    margin: 0px;
+    font-size: 50px;
+}
+
+.reviewSectionHeader input {
+    margin: auto;
+    height: 40px;
+    width: 250px;
+}
  
 @media screen and (max-width: 1050px) {
     #loginForm{
@@ -309,5 +325,14 @@ div.menu > a {
 
     #signUpLoginButtons{
         margin-bottom: 10px;
+    }
+
+    .reviewSectionHeader {
+        display: block;
+    }
+
+    .reviewSectionHeader input {
+        margin: 0px;
+        width: 100%;
     }
 }

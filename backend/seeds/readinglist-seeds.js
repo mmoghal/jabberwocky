@@ -7,11 +7,11 @@ const readingListData = [
   },
   {
     user_id: 1,
-    book_id: "Dune",
+    book_title: "Dune",
   },
   {
     user_id: 2,
-    book_id: "Lord of the Flies",
+    book_title: "Lord of the Flies",
   },
 ];
 

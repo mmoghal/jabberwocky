@@ -45,19 +45,26 @@ router.get('/', async (req, res) => {
 
 // POST - Create New Review
 router.post('/', async (req, res) => {
+console.log("?????");
+console.log(req.body);
 
     try {
-    
+        console.log(req);
         // Needs authentication
         const bookData = await Book.create({
             title: req.body.title,
+            author: req.body.author,
+            genre: req.body.genre,
+            year_published: req.body.year_published,
             review: req.body.review,
             rating: req.body.rating,
+            user_id: req.session.user_id,
         })
         res.status(200).json({bookData});
     } 
     
     catch (err) {
+        console.log(err);
       res.status(400).json(err);
     }
         

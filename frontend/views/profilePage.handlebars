@@ -10,9 +10,9 @@
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reading List</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                {{#each serialized as |book|}}
+                {{#each readingList as |book|}}
                     <li>
-                        <a class="menu-items-small" href="#">{{book.title}}</a>
+                        <a class="menu-items-small" href="#">{{book.book_title}}</a>
                     </li>
                 {{/each}}
                 <li>
@@ -67,3 +67,34 @@
     </div>
     {{/each}}
 </div>
+
+ <div class="modal" id="readingListModal">
+      <div class="modal-dialog">
+        <div class="modal-content" id="modalContents">
+          <div class="modal-header">
+            <h5 class="modal-title">Add a book to your reading list</h5>
+            <button
+              type="button"
+              class="btn-close"
+              id="closeModalButton"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              class="form-control me-2"
+              type="input"
+              id="newReadingListBook"
+              placeholder="Enter book name here"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              id="addNewBookButton"
+            >Add Book</button>
+          </div>
+        </div>
+      </div>
+    </div>

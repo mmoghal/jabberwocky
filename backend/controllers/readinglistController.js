@@ -50,7 +50,9 @@ const readinglistController = {
 
     createReadingList: async (req, res) => {
         try {
-            const newReadingList = await ReadingList.create(req.body);
+            const user_id = req.session.user_id;
+            const book_title = req.body.bookTitle;
+            const newReadingList = await ReadingList.create({user_id, book_title});
             res.status(200).json(newReadingList);
         } catch (err) {
             res.status(400).json(err);
