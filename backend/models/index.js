@@ -1,7 +1,7 @@
 // import models
-const User = require('./User');
-const Book = require('./Book');
-const ReadingList = require('./ReadingList');
+const User = require('./user');
+const Book = require('./book');
+const ReadingList = require('./readinglist');
 
 // Users have many Books
 User.hasMany(Book);
