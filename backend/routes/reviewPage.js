@@ -16,16 +16,8 @@ router.get('/', async (req, res) => {
             attributes: ['title', 'review', 'rating'],
         });
 
-        // Needs authentication
-
-        // const userId = req.query.userId;
-
-        // const user = await User.findByPk(userId, {
-        //     attributes: ['id', 'username'],
-        // })
 
         const serialized = books.map(book => book.get({ plain: true }));
-        // const userSerialized = user.get({ plain: true });
         res.render('reviewPage', 
         {
             serialized,
@@ -45,12 +37,8 @@ router.get('/', async (req, res) => {
 
 // POST - Create New Review
 router.post('/', async (req, res) => {
-console.log("?????");
-console.log(req.body);
 
     try {
-        console.log(req);
-        // Needs authentication
         const bookData = await Book.create({
             title: req.body.title,
             author: req.body.author,
@@ -61,10 +49,8 @@ console.log(req.body);
             user_id: req.session.user_id,
         })
         res.status(200).json({bookData});
-    } 
-    
+    }   
     catch (err) {
-        console.log(err);
       res.status(400).json(err);
     }
         

@@ -60,6 +60,10 @@ body{
     margin-left: 72px;
 }
 
+#logoutButton{
+    cursor: pointer;
+}
+
 #loginForm{
     display: flex;
 }
