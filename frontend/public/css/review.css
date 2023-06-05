@@ -185,15 +185,16 @@ div.menu > a {
 
 /* C.) --MAIN CONTENT-- */
 
-#book-title {
+#book-title,
+#book-author,
+#book-genre,
+#book-release-year,
+#book-review{
     background-color: #000;
     color: #AA8B8B;
 }
 
-#book-review {
-    background-color: #000;
-    color: #AA8B8B;
-}
+
 
 .stars {
     display: flex;
