@@ -320,7 +320,7 @@ div.menu > a {
     }
 
     #siteTitle{
-        font-size: 60px;
+        font-size: 50px;
     }
 
     #inputField{
@@ -338,5 +338,19 @@ div.menu > a {
     .reviewSectionHeader input {
         margin: 0px;
         width: 100%;
+    }
+
+    #createReviewBtn{
+        font-size: 14px;
+        width: 120px;
+    }
+
+    .menu{
+        font-size: 12px;
+
+    }
+
+    div.menu > a{
+        margin: 0px;
     }
 }
